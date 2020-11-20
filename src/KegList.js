@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Keg from './Keg';
 
-// const masterKegList = [
-//   {name: IPA}
-// ]
+const masterKegList = [
+  {name: 'IPA'}
+]
 
 function KegList(props) {
 
@@ -15,7 +15,7 @@ function KegList(props) {
 
   return (
     <React.Fragment>
-      {props.KegList.map((keg) =>
+      {props.masterKegList.map((keg) =>
       <Keg name = {keg.name}/>
       
       )}

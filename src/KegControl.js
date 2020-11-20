@@ -8,7 +8,7 @@ class KegControl extends React.Component {
   super(props);
   this.state = {
     formVisibleOnPage: false, 
-    masterKegList: [],
+    kegList: [ {name: 'ipa'}],
     kegQuantity: 0,
     selectedKeg: null
   };
