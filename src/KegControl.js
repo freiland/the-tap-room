@@ -45,7 +45,7 @@ render(){
   return (
     <React.Fragment>
       {currentlyVisibleState}
-      <button onClick={this.handleClick}>{addKegButton}</button>
+      <button onClick={this.handleClick}>{buttonText}</button>
     </React.Fragment>
   );
 }
