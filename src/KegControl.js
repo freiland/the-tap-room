@@ -20,29 +20,32 @@ handleAddingNewKegToList = (newKeg) => {
                 formVisibleOnPage: false });
   }
 
+  handleClick = () => {
+    this.setState(prevState => ({formVisibleOnPage: !prevState.formVisibleOnPage}));
+  }
 
 render(){
-  let currentVisibleState = null;
+  let currentlyVisibleState = null;
   let buttonText = null;
   if (this.state.selectedKeg != null) {
-    currentVisibleState = <KegDetail item = {this.state.selectedKeg} onClickingDelete = {this.handleDeletingKeg}/>
+    currentlyVisibleState = <KegDetail item = {this.state.selectedKeg} onClickingDelete = {this.handleDeletingKeg}/>
     buttonText = 'Return to Keg List'
 
   }
   
   else if(this.state.formVisibleOnPage) {
-    currentVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />;
+    currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />;
     buttonText = "Return to Keg List";
   } else {
-    currentVisibleState = <KegList kegList={this.state.masterKegList} onKegSelection={this.handleChangingSelectedKeg} onPourKeg={this.handlePouringKeg} onStockKeg={this.handleRestockingKeg} />;
+    currentlyVisibleState = <KegList kegList={this.state.masterKegList} onKegSelection={this.handleChangingSelectedKeg} onPourKeg={this.handlePouringKeg} onStockKeg={this.handleRestockingKeg} />;
     
     // currentVisibleState = <ItemList onBuyItem={this.state.handleBuyingItem} />;
-    buttonText = "Add New Item"
+    buttonText = "Add New Keg"
   }
   return (
     <React.Fragment>
-      {currentVisibleState}
-      <button onClick={this.handleClick}>{buttonText}</button>
+      {currentlyVisibleState}
+      <button onClick={this.handleClick}>{addKegButton}</button>
     </React.Fragment>
   );
 }
