@@ -9,6 +9,8 @@ function Keg (props) {
       </div>
       <h2>{props.name}</h2>
       <h3></h3>
+      <Button onClick={() => props.whenPourClicked(props.id)}>Pour!</Button>
+          <button onClick={() => props.whenStockClicked(props.id)}>Restock</button>
 
     </React.Fragment>
   )

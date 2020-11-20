@@ -1,5 +1,5 @@
 import React from 'react';
-import { propTypes } from 'react-bootstrap/esm/Image';
+import PropTypes from 'prop-types';
 import Keg from './Keg';
 
 // const masterKegList = [
@@ -8,14 +8,14 @@ import Keg from './Keg';
 
 function KegList(props) {
 
-  // function handlePouringKegSubmission(event) {
-  //   event.preventDefault();
-  //   console.log(event.target.quantity.value);
-  // }
+  function handlePouringKegSubmission(event) {
+    event.preventDefault();
+    console.log(event.target.quantity.value);
+  }
 
   return (
     <React.Fragment>
-      {props.masterKegList.map((keg) =>
+      {props.KegList.map((keg) =>
       <Keg name = {keg.name}/>
       
       )}
@@ -24,10 +24,10 @@ function KegList(props) {
 }
 
 KegList.propTypes = {
-  kegList: propTypes.array, 
-  onKegSelection: propTypes.func,
-  onPourKeg: propTypes.func, 
-  onStockKeg: propTypes.func
+  kegList: PropTypes.array, 
+  onKegSelection: PropTypes.func,
+  onPourKeg: PropTypes.func, 
+  onStockKeg: PropTypes.func
 
 }
 
