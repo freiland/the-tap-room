@@ -1,9 +1,9 @@
 import React from 'react';
 import NewKegForm from "./NewKegForm";
 import KegList from "./KegList";
-import KegDetail from "./KegDetail";g
+import KegDetail from "./KegDetail";
 
-class ItemControl extends React.Component {
+class KegControl extends React.Component {
   constructor(props) {
   super(props);
   this.state = {

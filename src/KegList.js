@@ -2,9 +2,9 @@ import React from 'react';
 import { propTypes } from 'react-bootstrap/esm/Image';
 import Keg from './Keg';
 
-const masterKegList = [
-  {name: IPA}
-]
+// const masterKegList = [
+//   {name: IPA}
+// ]
 
 function KegList(props) {
 
