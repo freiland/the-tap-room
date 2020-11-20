@@ -12,6 +12,7 @@ class KegControl extends React.Component {
     kegQuantity: 0,
     selectedKeg: null
   };
+  //this.handleClick = this.handleClick.bind(this);
 }
 
 handleAddingNewKegToList = (newKeg) => {

@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function Keg (props) {
   return (
     <React.Fragment>
-      <div onClick = {() => props.whenKegClciked(props.id)}>
+      <div onClick = {() => props.whenKegClicked(props.id)}>
         <Button id = 'detailButton'>Show Details </Button>
       </div>
       <h2>{props.name}</h2>

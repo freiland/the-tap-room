@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Keg from './Keg';
 
-const masterKegList = [
-  {name: 'IPA'}
-]
+
 
 function KegList(props) {
 
