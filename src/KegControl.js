@@ -15,7 +15,7 @@ class KegControl extends React.Component {
 }
 
 handleAddingNewKegToList = (newKeg) => {
-  const newMasterTicketList = this.state.masterKegList.concat(newKeg);
+  const newMasterKegList = this.state.masterKegList.concat(newKeg);
   this.setState({masterKegList: newMasterKegList,
                 formVisibleOnPage: false });
   }
