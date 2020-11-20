@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 function NewKegForm(props) {
   function handleNewKegFormSubmission(event) {
     event.preventDefault();
-    props.onNewKegCreation({name: event.target.value, pintsAvail: event.target.value, brand: event.target.value, price: event.target.value, alcoholContent: event.target.value})
-  }
+    props.onNewKegCreation({name: event.target.value, pintsAvail: event.target.value, brand: event.target.value, price: event.target.value, alcoholContent: event.target.value, id: v4()})
+  };
 
   return (
     <React.Fragment>

@@ -8,11 +8,17 @@ class KegControl extends React.Component {
   super(props);
   this.state = {
     formVisibleOnPage: false, 
-    kegList: [ {name: 'ipa'}],
+    masterKegList: [],
     kegQuantity: 0,
     selectedKeg: null
   };
 }
+
+handleAddingNewKegToList = (newKeg) => {
+  const newMasterTicketList = this.state.masterKegList.concat(newKeg);
+  this.setState({masterKegList: newMasterKegList,
+                formVisibleOnPage: false });
+  }
 
 
 render(){
@@ -25,7 +31,7 @@ render(){
   }
   
   else if(this.state.formVisibleOnPage) {
-    currentVisibleState = <NewKegForm onNewItemCreation={this.handleAddingNewKegToList} />;
+    currentVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />;
     buttonText = "Return to Keg List";
   } else {
     currentVisibleState = <KegList kegList={this.state.masterKegList} onKegSelection={this.handleChangingSelectedKeg} onPourKeg={this.handlePouringKeg} onStockKeg={this.handleRestockingKeg} />;
