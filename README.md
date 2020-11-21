@@ -23,6 +23,8 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ### `npm run build`
 
+<img src="https://drive.google.com/file/d/1B24y2tJTMx3niKQ8hFhx-qU_pGM9putR/preview" width="640" height="480"></iframe>>
+
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
