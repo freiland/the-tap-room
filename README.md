@@ -32,7 +32,7 @@ As a user, I want to have kegs prices to be color-coded for easy readability. Th
 As a user, I want this application to be nicely styled. (Use stylesheets and CSS objects!)
 
 ## Website Planning
-<img src="https://drive.google.com/file/d/1B24y2tJTMx3niKQ8hFhx-qU_pGM9putR/preview" width="640" height="480"></iframe>>
+<img src="https://drive.google.com/file/d/1B24y2tJTMx3niKQ8hFhx-qU_pGM9putR/preview" width="640" height="480">
 
 ## Setup/Installation Requirements
 
