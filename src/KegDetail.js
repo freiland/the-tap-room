@@ -5,7 +5,7 @@ import KegControl from './KegControl';
 
 function KegDetail(props) {
   const { keg, onClickingDelete } = props;
-  console.log(keg);
+  //console.log(keg);
   return (
     <React.Fragment>
       <h1>

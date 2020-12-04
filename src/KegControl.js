@@ -21,8 +21,22 @@ handleAddingNewKegToList = (newKeg) => {
                 formVisibleOnPage: false });
   }
 
+// handleClick = () => {
+//   this.setState(prevState => ({formVisibleOnPage: !prevState.formVisibleOnPage}));
+// }
+
+
 handleClick = () => {
-  this.setState(prevState => ({formVisibleOnPage: !prevState.formVisibleOnPage}));
+  if (this.state.selectedKeg != null) {
+    this.setState({
+      formVisibleOnPage: false,
+      selectedFlavor: null
+    });
+  } else {
+    this.setState(prevState => ({
+      formVisibleOnPage: !prevState.formVisibleOnPage,
+    }));
+  }
 }
 
 handlePouringKeg = (id) => {
