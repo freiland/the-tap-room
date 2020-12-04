@@ -21,9 +21,22 @@ handleAddingNewKegToList = (newKeg) => {
                 formVisibleOnPage: false });
   }
 
-  handleClick = () => {
-    this.setState(prevState => ({formVisibleOnPage: !prevState.formVisibleOnPage}));
-  }
+handleClick = () => {
+  this.setState(prevState => ({formVisibleOnPage: !prevState.formVisibleOnPage}));
+}
+
+handlePouringKeg = (id) => {
+  const newMasterKegList = this.state.masterKegList;
+  newMasterKegList.map((keg) => {
+    if (keg.id === id && keg.quantity > 0) {
+      keg.quantity -= 1;
+    } else if (keg.id === id && keg.quantity === 0 ) {
+      keg.quantity = 'empty';
+    }
+    return keg; 
+  });
+  this.setState({masterKegList: newMasterKegList}); 
+};
 
 render(){
   let currentlyVisibleState = null;

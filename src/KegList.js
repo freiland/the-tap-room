@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Keg from './Keg';
-
+import NewKegForm from './NewKegForm';
 
 
 function KegList(props) {
@@ -13,13 +13,19 @@ function KegList(props) {
 
   return (
     <React.Fragment>
-      {props.kegList.map((keg, index) =>
-      <Keg names = {keg.name} key={index}/>
       
+      {props.kegList.map((keg, index) =>
+      
+      <Keg 
+      
+      name = {keg.name} key={index}
+
+       quantity = {keg.pintsAvail} />
       )}
+      
     </React.Fragment>
-  )
-}
+  );
+};
 
 KegList.propTypes = {
   kegList: PropTypes.array, 
