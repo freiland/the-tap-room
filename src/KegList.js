@@ -16,12 +16,12 @@ function KegList(props) {
       <Keg 
       whenKegClicked = { props.onKegSelection }
       whenPourClicked = { props.onPourKeg }
-      WhenStockClicked = { props.onStockKeg }
+      whenReStockClicked = { props.onReStockKeg }
 
-      
       name = {keg.name} key={index}
 
-       quantity = {keg.pintsAvail} />
+      quantity = {keg.pintsAvail} />
+      
       )}
       
     </React.Fragment>
@@ -34,7 +34,7 @@ KegList.propTypes = {
   kegList: PropTypes.array, 
   onKegSelection: PropTypes.func,
   onPourKeg: PropTypes.func, 
-  onStockKeg: PropTypes.func
+  onReStockKeg: PropTypes.func
 
 }
 

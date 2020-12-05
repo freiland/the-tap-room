@@ -8,7 +8,7 @@ class KegControl extends React.Component {
   super(props);
   this.state = {
     formVisibleOnPage: false, 
-    masterKegList: [{name: 'test', price: 2, pintsAvail: 124}],
+    masterKegList: [{name: 'test', price: 2, pintsAvail: 12}],
   
     selectedKeg: null
   };
@@ -52,28 +52,52 @@ handlePouringKeg = (id) => {
   this.setState({masterKegList: newMasterKegList}); 
 };
 
+handleReStockKeg = (id) => {
+  const newMasterKegList = this.state.masterKegList;
+  newMasterKegList.map((keg) => {
+    if (keg.id === id && keg.pintsAvail != 'empty') {
+      keg.pintsAvail += 1; 
+    } else {
+      keg.pintsAvail = 0;
+    }
+    return keg;
+  });
+  this.setState({masterKegList: newMasterKegList});
+};
+
 render(){
+  
   let currentlyVisibleState = null;
+  
   let buttonText = null;
+  
   if (this.state.selectedKeg != null) {
+    
     currentlyVisibleState = <KegDetail item = {this.state.selectedKeg} onClickingDelete = {this.handleDeletingKeg}/>
     buttonText = 'Return to Keg List'
 
   }
   
   else if(this.state.formVisibleOnPage) {
+    
     currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />;
     buttonText = "Return to Keg List";
-  } else {
-    currentlyVisibleState = <KegList kegList={this.state.masterKegList} onKegSelection={this.handleChangingSelectedKeg} onPourKeg={this.handlePouringKeg} onStockKeg={this.handleRestockingKeg} />;
+  
+  } 
+  
+  else {
+    
+    currentlyVisibleState = <KegList kegList={this.state.masterKegList} onKegSelection={this.handleChangingSelectedKeg} onPourKeg={this.handlePouringKeg} onReStockKeg={this.handleReStockKeg} />;
     
     // currentVisibleState = <ItemList onBuyItem={this.state.handleBuyingItem} />;
     buttonText = "Add New Keg"
-  }
+  } 
   return (
     <React.Fragment>
+      <div className='test'>
       {currentlyVisibleState}
       <button onClick={this.handleClick}>{buttonText}</button>
+      </div>
     </React.Fragment>
   );
 }

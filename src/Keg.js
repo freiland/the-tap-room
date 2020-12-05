@@ -23,7 +23,7 @@ function Keg (props) {
       
       
       <Button onClick={() => props.whenPourClicked(props.id)}>Pour!</Button>
-          <button onClick={() => props.whenStockClicked(props.id)}>Restock</button>
+        <button onClick={() => props.whenReStockClicked(props.id)}>Restock</button>
       
       </div>
         
@@ -37,12 +37,12 @@ Keg.propTypes = {
   pintsAvail: PropTypes.number,
   brand: PropTypes.string,
   price: PropTypes.number,
-  quantity: PropTypes.number,
+  pintsAvail: PropTypes.number,
   alcoholContent: PropTypes.number,
   id: PropTypes.number, 
   whenKegClicked: PropTypes.func,
   WhenPourClicked: PropTypes.func, 
-  WhenStockClicked: PropTypes.func
+  WhenReStockClicked: PropTypes.func
 
 };
 
