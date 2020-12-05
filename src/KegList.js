@@ -1,22 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Keg from './Keg';
-import NewKegForm from './NewKegForm';
+
 
 
 function KegList(props) {
-
-  function handlePouringKegSubmission(event) {
-    event.preventDefault();
-    console.log(event.target.quantity.value);
-  }
-
   return (
     <React.Fragment>
+      <h3>Add a Keg below, or click on an existing keg to see its details.</h3>
+
+  
       
       {props.kegList.map((keg, index) =>
       
       <Keg 
+      whenKegClicked = { props.onKegSelection }
+      whenPourClicked = { props.onPourKeg }
+      WhenStockClicked = { props.onStockKeg }
+
       
       name = {keg.name} key={index}
 
@@ -24,7 +25,9 @@ function KegList(props) {
       )}
       
     </React.Fragment>
-  );
+
+      );
+
 };
 
 KegList.propTypes = {
@@ -36,3 +39,8 @@ KegList.propTypes = {
 }
 
 export default KegList; 
+
+
+// function handlePouringKegSubmission(event) {
+//   event.preventDefault();
+//   console.log(event.target.quantity.value);

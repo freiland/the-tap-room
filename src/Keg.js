@@ -14,16 +14,18 @@ function Keg (props) {
     <React.Fragment>
       <div class='card'>
       <div onClick = {() => props.whenKegClicked(props.id)}>
-      <h2>{props.name}</h2>
+      <h2>Keg name: {props.name}</h2>
       </div>
       
+      
         
-        <h4>{props.quantity}</h4>
+        <h4>Remaining Pints: {props.quantity}</h4>
       
       
       <Button onClick={() => props.whenPourClicked(props.id)}>Pour!</Button>
           <button onClick={() => props.whenStockClicked(props.id)}>Restock</button>
-          </div>
+      
+      </div>
         
     </React.Fragment>
   )

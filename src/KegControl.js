@@ -8,8 +8,8 @@ class KegControl extends React.Component {
   super(props);
   this.state = {
     formVisibleOnPage: false, 
-    masterKegList: [],
-    kegQuantity: 0,
+    masterKegList: [{name: 'test', price: 2, pintsAvail: 124}],
+  
     selectedKeg: null
   };
   //this.handleClick = this.handleClick.bind(this);
@@ -30,7 +30,7 @@ handleClick = () => {
   if (this.state.selectedKeg != null) {
     this.setState({
       formVisibleOnPage: false,
-      selectedFlavor: null
+      selectedKeg: null
     });
   } else {
     this.setState(prevState => ({
@@ -42,10 +42,10 @@ handleClick = () => {
 handlePouringKeg = (id) => {
   const newMasterKegList = this.state.masterKegList;
   newMasterKegList.map((keg) => {
-    if (keg.id === id && keg.quantity > 0) {
-      keg.quantity -= 1;
-    } else if (keg.id === id && keg.quantity === 0 ) {
-      keg.quantity = 'empty';
+    if (keg.id === id && keg.pintsAvail > 0) {
+      keg.pintsAvail -= 1;
+    } else if (keg.id === id && keg.pintsAvail === 0 ) {
+      keg.pintsAvail = 'empty';
     }
     return keg; 
   });
