@@ -17,6 +17,7 @@ function KegList(props) {
       whenKegClicked = { props.onKegSelection }
       whenPourClicked = { props.onPourKeg }
       whenReStockClicked = { props.onReStockKeg }
+      //onKegSelection = { props.onKegSelection}
 
       name = {keg.name} key={index}
 

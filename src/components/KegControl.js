@@ -8,7 +8,7 @@ class KegControl extends React.Component {
   super(props);
   this.state = {
     formVisibleOnPage: false, 
-    masterKegList: [{name: 'test', price: 2, pintsAvail: 12}],
+    masterKegList: [{name: 'Coastal IPA', price: 2, pintsAvail: 12}, {name: 'Fresh Hop Lager', pintsAvail: 12}],
   
     selectedKeg: null
   };
@@ -20,10 +20,6 @@ handleAddingNewKegToList = (newKeg) => {
   this.setState({masterKegList: newMasterKegList,
                 formVisibleOnPage: false });
   }
-
-// handleClick = () => {
-//   this.setState(prevState => ({formVisibleOnPage: !prevState.formVisibleOnPage}));
-// }
 
 
 handleClick = () => {
@@ -39,7 +35,14 @@ handleClick = () => {
   }
 }
 
+handleChangingSelectedKeg= (id) => {
+  console.log(id);
+  const selectedKeg = this.state.masterKegList.filter(keg => keg.id === id)[0];
+  this.setState({selectedKeg: selectedKeg});
+}
+
 handlePouringKeg = (id) => {
+  console.log(id);
   const newMasterKegList = this.state.masterKegList;
   newMasterKegList.map((keg) => {
     if (keg.id === id && keg.pintsAvail > 0) {
@@ -55,7 +58,7 @@ handlePouringKeg = (id) => {
 handleReStockKeg = (id) => {
   const newMasterKegList = this.state.masterKegList;
   newMasterKegList.map((keg) => {
-    if (keg.id === id && keg.pintsAvail != 'empty') {
+    if (keg.id === id && keg.pintsAvail !== 'empty') {
       keg.pintsAvail += 1; 
     } else {
       keg.pintsAvail = 0;

@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import Keg from './Keg'
-import KegControl from './KegControl';
 
 function KegDetail(props) {
   const { keg, onClickingDelete } = props;

@@ -21,11 +21,11 @@ function Keg (props) {
         
         <h4>Remaining Pints: {props.quantity}</h4>
       
-      
+        
       <Button onClick={() => props.whenPourClicked(props.id)}>Pour!</Button>
         <button onClick={() => props.whenReStockClicked(props.id)}>Restock</button>
+        </div>
       
-      </div>
         
     </React.Fragment>
   )
