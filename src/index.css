@@ -1,12 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Commissioner:wght@100&family=Montserrat+Subrayada&display=swap');
 
 
-body {
-  background-color: light blue;
+
+
+div {
+  background-color: rgb(112, 126, 182);
   margin: 0;
-  font-family: 'Major Mono Display', monospace;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Commissioner', sans-serif;
+  -webkit-for-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; 
+}
+
+.jumbotron {
+  font-family: 'Montserrat Subrayada', sans-serif;
+  
+  color: rgb(4, 1, 1);
+
 }
 
 /* code {

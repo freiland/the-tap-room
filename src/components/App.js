@@ -5,6 +5,7 @@ import KegControl from "./KegControl";
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Jumbotron';
+import '../index.css';
 
 
 function App() {
