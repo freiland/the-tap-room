@@ -36,8 +36,9 @@ handleClick = () => {
 }
 
 handleChangingSelectedKeg= (id) => {
-  console.log(id);
+
   const selectedKeg = this.state.masterKegList.filter(keg => keg.id === id)[0];
+  console.log(selectedKeg.name);
   this.setState({selectedKeg: selectedKeg});
 }
 
@@ -47,6 +48,7 @@ handlePouringKeg = (id) => {
   newMasterKegList.map((keg) => {
     if (keg.id === id && keg.pintsAvail > 0) {
       keg.pintsAvail -= 1;
+      //console.log(keg.id);
     } else if (keg.id === id && keg.pintsAvail === 0 ) {
       keg.pintsAvail = 'empty';
     }

@@ -1,17 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import Keg from './Keg'
+//import KegList from './KegList'
 
 function KegDetail(props) {
-  const { keg, onClickingDelete } = props;
+  
+  const { keg } = props;
   //console.log(keg);
   return (
     <React.Fragment>
       <h1>
-        {keg.name} Details
+        Details:
       </h1>
-      <p>{keg.name}, {keg.pintsAvail}, {keg.price}, {keg.brand},{keg.alcoholContent}</p>
-      <button onClick={()=> onClickingDelete(keg.id) }>Delete Keg</button>
+      {/* <p>{keg.name}</p> */}
+      
       <hr/>
     </React.Fragment>
   );
