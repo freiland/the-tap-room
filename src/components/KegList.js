@@ -19,7 +19,7 @@ function KegList(props) {
       whenReStockClicked = { props.onReStockKeg }
       //onKegSelection = { props.onKegSelection}
 
-      name = {keg.name} key={index}
+      name = {keg.name} key={index} id = {keg.id}
 
       quantity = {keg.pintsAvail} />
       

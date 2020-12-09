@@ -8,7 +8,7 @@ class KegControl extends React.Component {
   super(props);
   this.state = {
     formVisibleOnPage: false, 
-    masterKegList: [{name: 'Coastal IPA', price: 2, pintsAvail: 12}, {name: 'Fresh Hop Lager', pintsAvail: 12}],
+    masterKegList: [{name: 'Coastal IPA', price: 2, pintsAvail: 12, id: 'agg'}, {name: 'Fresh Hop Lager', pintsAvail: 12, id:'hyy'}],
   
     selectedKeg: null
   };
@@ -62,9 +62,10 @@ handleReStockKeg = (id) => {
   newMasterKegList.map((keg) => {
     if (keg.id === id && keg.pintsAvail !== 'empty') {
       keg.pintsAvail += 1; 
-    } else {
-      keg.pintsAvail = 0;
-    }
+    } else if (keg.id === id && keg.pintsAvail === 'empty') 
+    {
+      keg.pintsAvail = 1;
+    } 
     return keg;
   });
   this.setState({masterKegList: newMasterKegList});
