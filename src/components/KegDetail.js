@@ -1,18 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import Keg from './Keg'
-//import KegList from './KegList'
+import KegList from './KegList'
+import KegControl from './KegControl'
 
 function KegDetail(props) {
   
   const { keg } = props;
-  //console.log(keg);
+  alert(keg)
   return (
     <React.Fragment>
       <h1>
         Details:
       </h1>
-      {/* <p>{keg.name}</p> */}
+      <p>{keg}</p>
       
       <hr/>
     </React.Fragment>
