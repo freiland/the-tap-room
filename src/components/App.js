@@ -1,4 +1,10 @@
-import React from 'react';
+import React from 'react'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import ReactDOM from 'react-dom';
 import KegControl from "./KegControl";
 import Jumbotron from 'react-bootstrap/Jumbotron'
@@ -10,6 +16,7 @@ import ProminentAppBar from './ProminentAppBar';
 
 function App() {
   return (
+    <Router>
     <React.Fragment>
       
       <ProminentAppBar />
@@ -19,6 +26,7 @@ function App() {
       <KegControl />
       </div>
     </React.Fragment>
+    </Router>
   );
 }
 
